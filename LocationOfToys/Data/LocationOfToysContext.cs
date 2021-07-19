@@ -15,5 +15,6 @@ namespace LocationOfToys.Data
         }
 
         public DbSet<LocationOfToys.Models.Box> Box { get; set; }
+        public DbSet<Toy> Toy { get; set; }
     }
 }
