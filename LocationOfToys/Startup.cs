@@ -37,7 +37,9 @@ namespace LocationOfToys
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<LocationOfToysContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("LocationOfToysContext")));
+                    options.UseMySql(Configuration.GetConnectionString("LocationOfToysContext"), builder =>
+                        builder.MigrationsAssembly("LocationOfToys")));
+                    //options.UseSqlServer(Configuration.GetConnectionString("LocationOfToysContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
